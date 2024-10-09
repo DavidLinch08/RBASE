@@ -1,0 +1,553 @@
+<!doctype html>
+<html>
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+    </style>
+
+    <style type="text/css">
+        .displayAddressDiv .displayAddressUL {
+            list-style-type: none;
+            padding: 0%;
+            margin-left: 0%;
+            margin-top: 0%;
+            margin-bottom: 0%;
+            text-align: left;
+            vertical-align: top;
+        }
+
+        .displayAddressDiv .displayAddressLI {
+            width: 100%;
+        }
+
+        .displayAddressDiv {
+            vertical-align: top;
+            padding-bottom: 0.5em;
+        }
+
+        .displayAddressDiv h2 {
+            font-size: 1em;
+            display: inline;
+        }
+    </style>
+
+    <style type="text/css">
+        body {
+            background-color: #FFFFFF;
+        }
+
+        * html body {
+            margin-top: 0px;
+        }
+
+        h2.h1 {
+            margin-bottom: 0em;
+        }
+
+        .serif {
+            font-family: times, serif;
+        }
+
+        .h1 {
+            color: #E47911;
+        }
+
+        a:active {
+            
+            color: #004B91;
+        }
+
+        a:visited {
+            color: #004B91;
+        }
+
+        a:link {
+            color: #004B91;
+        }
+
+        .price {
+            color: #990000;
+        }
+    </style>
+
+    <style type="text/css">
+        
+        .sans,
+        .h1,
+        .big,
+        .tiny,
+        a:active,
+        a:visited,
+        a:link {
+            font-family: Roboto, arial, helvetica, sans-serif;
+        }
+
+        .price {
+            font-family: arial, verdana, helvetica, sans-serif;
+        }
+
+        .sans,
+        .h1 {
+            font-size: medium;
+        }
+
+        .big {
+            font-size: xx-large;
+        }
+
+        .tiny {
+            font-size: 7px;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 50px;
+            margin-left: 90px;
+        }
+        .button {
+            background-color: #fff;
+            color: #00000056;
+            border:1.9px solid;
+            border-color: #07070733;
+            padding: 4.5px 20px;
+            font-size: 9.7px;
+            font-family: Roboto;
+            font-weight: 700;
+            border-radius: 3px;
+        }
+
+        body,
+        td,
+        th {
+            font-family: Roboto, arial, helvetica, sans-serif;
+            font-size: 9.6px;
+            line-height: 14.2px;
+            letter-spacing: -0.1px;
+        }
+        body {
+            color: #000000;
+            margin-top: 0px;
+            padding-top:0px;
+            margin:36px 36px 80px 38px;
+        }
+
+    </style>
+
+    <title>Amazon.com - Order {{order_number}}</title>
+
+</head>
+
+<body>
+
+    <span class="recres-logo"><img src="https://darkproof.net/wp-content/uploads/receipts/amazon/amazon.com.gif"
+            width="81" align="left" height="16" border="0"></span>
+    <br>
+    <br clear="all">
+    <center>
+        <b class="h1" style="font-size: 11.7px; font-weight: 501;">Final Details for Order #<span
+                class="rec-order-number">{{order_number}}</span></b><br>
+        <script>
+            //works if JS is enabled
+            // chdev commented added directly wihout js
+            // document.write("<a href='#' onclick='javascript:window.print();'>Print this page for your records.");
+        </script>
+        <a style="font-size: 9.5px; color: #aa662b;;" href="#" onclick="javascript:window.print();">Print this page for your records.</a>
+    </center>
+    <br>
+
+    <table width="90%" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff" align="center">
+        <tr>
+            <td>
+                <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td valign="top" align="left">
+                            <b>Order Placed:</b>
+                            <span class="rec-order-date">{{order_date}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left">
+                            <b><span class="recres-website">Amazon.com</span> order number:</b>
+                            <span class="rec-order-number">{{order_number}}</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left">
+                            <b>Order Total: <span class="recres-currency">$</span><span
+                                    class="recres-grand-total">{{grand_total}}</span></b>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" bgcolor="#000000" align="center"
+                    style="border-top-width: 2px;border-top-style: solid;">
+                    <tr bgcolor="#000000">
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"
+                                bgcolor="#000000">
+                                <tr bgcolor="#ffffff">
+                                    <td valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr bgcolor="#ffffff">
+                                                <td>
+                                                    <center style="margin-top: -2px;">
+                                                        <b class="sans">
+                                                            <span class="recwrapper-website-us recwrapper-website-ca"
+                                                                style="display: table-row; font-size: 11.45px; letter-spacing: 0px;">Shipped
+                                                                on <span class="rec-dispatch-date">{{dispatch_date}}</span></span>
+                                                        </b>
+                                                    </center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                        <br><br>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#ffffff" valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr valign="top">
+                                                <td width="100%">
+                                                    <table border="0" cellspacing="0" cellpadding="0" align="right">
+                                                        <tr valign="top">
+                                                            <td align="right">
+
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <table border="0" cellspacing="0" cellpadding="0" width="100%">
+                                                        <tr valign="top">
+                                                            <td valign="top">
+
+                                                                <b style="margin-left: 0px;">Items Ordered</b>
+                                                            </td>
+                                                            <td align="right" valign="top">
+                                                                <b>Price</b>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+
+                                                            <td colspan="1" valign="top" style="padding-right: 70px;">
+                                                                <span class="rec-quantity"
+                                                                    style="margin-left: 3px;">{{item_quantity}}</span> of:
+                                                                <i class="rec-item-name">{{item_name}}</i><br>
+                                                                <span class="tiny"
+                                                                    style="margin-left: 3px; font-weight: 400; font-size: 7.5px;">Sold
+                                                                    by: <span class="rec-sold-by-amazon-text">{{sold_by}}</span></span>
+                                                                <br>
+                                                                <span class="tiny"
+                                                                    style="margin-left: 3px; font-weight: 400; font-size: 7.5px;">Supplied
+                                                                    by: <span class="rec-sold-by-amazon-text">{{supplied_by}}</span></span>
+                                                                <br>
+                                                                <br>
+                                                                <span class="tiny"
+                                                                    style="margin-left: 3px; font-weight: 400; font-size: 7.5px;">Condition:
+                                                                    New </span>
+                                                                <br>
+                                                            </td>
+                                                            <td align="right" valign="top" colspan="2">
+                                                                <span class="recres-currency">$</span><span
+                                                                    class="rec-item-cost">{{item_cost}}</span><br>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                    <br>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#ffffff" valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td>
+                                                    <br>
+                                                    <span
+                                                        class="recwrapper-website-us recwrapper-website-ca display-inline"
+                                                        style="display: inline">
+                                                        <b>Shipping Address:</b>
+                                                    </span>
+                                                    <br>
+
+                                                    <div class="displayAddressDiv">
+                                                        <ul class="displayAddressUL">
+                                                            <li class="displayAddressLI displayAddressFullName"><span
+                                                                    class="id-addr-ux-search-text rec-full-name">{{full_name}}</span></li>
+                                                            <li class="displayAddressLI displayAddressAddressLine1">
+
+                                                                <span class="id-addr-ux-search-text rec-address-line-1">{{address_line1}}</span>
+                                                                <br>
+                                                                <span class="rec-address-line-2">{{address_line2}}</span>
+
+                                                            </li>
+                                                            <li
+                                                                class="displayAddressLI displayAddressCityStateOrRegionPostalCode">
+                                                                <span class="id-addr-ux-search-text"><span
+                                                                        class="rec-city">{{address_city}}</span>, <span
+                                                                        class="rec-state">{{address_state}}</span><span
+                                                                        class="recwrapper-website-uk display-inline"
+                                                                        style="display: none">,</span> <span
+                                                                        class="rec-zip-code">{{address_zip}}</span></span>
+                                                            </li>
+                                                            <li class="displayAddressLI displayAddressCountryName">
+                                                                <span class="id-addr-ux-search-text rec-country">United States</span></li>
+                                                        </ul>
+                                                    </div>
+                                                    <br>
+
+                                                    <span
+                                                        class="recwrapper-website-us recwrapper-website-ca display-inline"
+                                                        style="display: inline">
+                                                        <b>Shipping Speed:</b>
+                                                    </span>
+                                                    <span class="recwrapper-website-uk display-inline"
+                                                        style="display: none">
+                                                        <b>Delivery Option:</b>
+                                                    </span>
+                                                    <br>
+
+                                                    <span class="rec-shipping-speed rec-shipping-speed-uk">{{shipping_speed}}</span>
+                                                    <br>
+                                                </td>
+                                                <td align="right">
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                        <tr valign="top">
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <br>
+                <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"
+                    style="border-top-width: 2px;border-top-style: solid;">
+                    <tr>
+                        <td>
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center"
+                                bgcolor="#000000">
+                                <tr bgcolor="#ffffff">
+                                    <td valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="5">
+                                            <tr bgcolor="#ffffff">
+                                                <td>
+                                                    <center style="margin-top: -6px; margin-bottom: -4px;"><b class="sans"
+                                                            style="display: table-row; font-size: 11.45px; letter-spacing: 0px;">Payment
+                                                            information</b></center>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                
+                                <tr>
+                                    <td bgcolor="#ffffff" valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr valign="top">
+                                                <td width="100%">
+                                                    <table border="0" cellspacing="0" cellpadding="0" align="right">
+                                                        <tr valign="top">
+                                                            <td align="right">
+                                                                <table border="0" cellpadding="0" cellspacing="0" style = "transform: scaleY(1.05);">
+
+                                                                    <tr valign="top">
+                                                                        <td nowrap align="right">Item(s) Subtotal: </td>
+                                                                        <td nowrap align="right">
+                                                                            <span class="recres-currency">$</span><span
+                                                                                class="recres-items-subtotal">{{item_cost}}</span>
+                                                                        </td>
+                                                                    </tr>
+                                                                    
+                                                                    <tr valign="top">
+                                                                        <td nowrap align="right">
+                                                                            <span
+                                                                                class="recwrapper-website-us recwrapper-website-ca display-inline"
+                                                                                style="display: inline">
+                                                                                Shipping &amp; Handling:
+                                                                            </span>
+                                                                        </td>
+                                                                        <td nowrap align="right">
+                                                                            <span class="recres-currency">$</span><span
+                                                                                class="rec-shipping-price">{{shipping_price}}</span>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr valign="top">
+                                                                        <td nowrap align="right"> </td>
+                                                                        <td nowrap align="right">-----</td>
+                                                                    </tr>
+                                                                    <!-- US -->
+                                                                    <tr valign="top" class="recwrapper-website-us"
+                                                                        style="display: table-row">
+                                                                        <td nowrap align="right">Total before tax:</td>
+                                                                        <td nowrap align="right">
+                                                                            <span class="recres-currency">$</span><span
+                                                                                class="recres-total-before-tax">{{total_before_tax}}</span>
+                                                                        </td>
+                                                                    </tr>
+
+                                                                    <tr valign="top" class="recwrapper-website-us"
+                                                                        style="display: table-row">
+                                                                        <td nowrap align="right">Estimated tax to be
+                                                                            collected:</td>
+                                                                        <td nowrap align="right" style="padding-left: 50px;">
+                                                                            <span class="recres-currency">$</span><span
+                                                                                class="rec-tax">{{total_tax}}</span>
+                                                                        </td>
+                                                                    </tr>
+
+
+                                                                    <tr valign="top">
+                                                                        <td nowrap align="right"> </td>
+                                                                        <td nowrap align="right">-----</td>
+                                                                    </tr>
+
+                                                                    <tr valign="top">
+                                                                        <td nowrap align="right"><b>Grand Total:</b>
+                                                                        </td>
+                                                                        <td nowrap align="right"><b><span
+                                                                                    class="recres-currency">$</span><span
+                                                                                    class="recres-grand-total">{{grand_total}}</span></b>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+
+                                                    <b>Payment Method: </b>
+                                                    <br>
+
+                                                    <span class="rec-payment-method">Visa</span>
+                                                    <nobr class="recwrapper-giftcard-hidden" style="display: initial">
+                                                        ending in: <span class="rec-payment-digits">{{last_digits}}</span></nobr>
+                                                    <br>
+                                                    <br>
+
+                                                    <span class="recwrapper-website-us recwrapper-website-ca"
+                                                        style="display: table-row">
+                                                        <b>Billing address</b>
+                                                    </span>
+
+                                                    <div class="displayAddressDiv">
+                                                        <ul class="displayAddressUL">
+                                                            <li class="displayAddressLI displayAddressFullName"><span
+                                                                    class="id-addr-ux-search-text rec-full-name">{{full_name}}</span></li>
+                                                            <li class="displayAddressLI displayAddressAddressLine1">
+
+                                                                <span class="id-addr-ux-search-text rec-address-line-1">{{address_line1}}</span>
+                                                                <br>
+                                                                <span class="rec-address-line-2">{{address_line2}}</span>
+                                                            </li>
+                                                            <li
+                                                                class="displayAddressLI displayAddressCityStateOrRegionPostalCode">
+                                                                <span class="id-addr-ux-search-text"><span
+                                                                        class="rec-city">{{address_city}}</span>, <span
+                                                                        class="rec-state">{{address_state}}</span><span
+                                                                        class="recwrapper-website-uk display-inline"
+                                                                        style="display: none">,</span> <span
+                                                                        class="rec-zip-code">{{address_zip}}</span></span>
+                                                            </li>
+                                                            <li class="displayAddressLI displayAddressCountryName"><span
+                                                                    class="id-addr-ux-search-text rec-country">United
+                                                                    States</span></li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+
+                                <tr class="recwrapper-credit-card-transactions" style="display: table-row">
+                                    <td bgcolor="#ffffff" valign="top" colspan="2">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td valign="top">
+                                                    <div style="text-align:left; font-size: 9.5px; transform: scaleY(1.1);"><b>Credit Card transactions </b></div>
+                                                </td>
+                                                <td align="right">
+                                                    <table border="0" cellpadding="0" cellspacing="0">
+                                                        <tr valign="top">
+                                                            <td nowrap align="right">
+                                                                <span class="rec-payment-method">Visa</span> ending in
+                                                                <span class="rec-payment-digits">{{last_digits}}</span>: <span
+                                                                    class="rec-dispatch-date">{{dispatch_date}}</span>:
+                                                            </td>
+                                                            <td nowrap align="right" colspan="2" style="padding-left: 40px;"> 
+                                                                <span class="recres-currency">$</span><span
+                                                                    class="recres-grand-total">{{grand_total}}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <center style="margin-top: 14px; margin-bottom: -8px; font-size: 9.7px; letter-spacing: 0.05px;">
+        <p>To view the status of your order, return to <a style="text-decoration: none;" href="https://www.amazon.com/gp/css/summary/edit.html?ie=UTF8&orderID={{order_number}}">Order Summary</a>.</p>
+    </center>
+
+    <br>
+
+    <center class="tiny" style="font-size: 7px; font-weight: 400; transform: (1); letter-spacing: 0.1px;">
+        <span class="recwrapper-website-us display-inline" style="display: inline">
+            <a style="text-decoration: none;" href="https://www.amazon.com/gp/help/customer/display.html?ie=UTF8&amp;nodeId=508088"
+                rel="nofollow">Conditions of Use</a>
+        </span>
+        |
+        <a style="text-decoration: none;" href="https://www.amazon.com/gp/help/customer/display.html?ie=UTF8&amp;nodeId=468496" rel="nofollow">Privacy
+            Notice</a>
+        <span style="color: #000000a3;">© 1996-2024, Amazon.com, Inc. or its affiliates</span>
+    </center>
+
+<p style="text-align: center; color: #00000062; margin-top: 33px; font-size: 10px;"> Back to top</p>
+
+<div class="button-container">
+    <a href="https://www.amazon.com/customer-preferences/edit?ie=UTF8&preferencesReturnUrl=%2Fgp%2Fcss%2Fsummary%2Fprint.html%2Fref%3Dppx_od_dt_b_invoice%3Fie%3DUTF8%26orderID%3D{{order_number}}&ref_=footer_lang" class="button" style="background-color: #fff; color: #00000056; border:1.9px solid; border-color: #07070733; padding: 4.5px 20px; font-size: 9.7px; font-family: Roboto; font-weight: 700; border-radius: 3px; padding: 4px 24.5px 4.5px 19px; margin: 4px 0 -10px 0;margin-bottom: -8px;margin-left: 10px;padding-right: 26.5px;padding-left: 21px; text-decoration: none;">English</a>
+    <a href="https://www.amazon.com/customer-preferences/country?ie=UTF8&preferencesReturnUrl=%2Fgp%2Fcss%2Fsummary%2Fprint.html%2Fref%3Dppx_od_dt_b_invoice%3Fie%3DUTF8%26orderID%3D{{order_number}}&ref_=footer_icp_cp" class="button" style="background-color: #fff; color: #00000056; border:1.9px solid; border-color: #07070733; padding: 4.5px 20px; font-size: 9.7px; font-family: Roboto; font-weight: 700; border-radius: 3px; padding: 4px 24.5px 4.5px 24px; margin: 4px 0 -10px 0;margin-bottom: -8px;padding-right: 15.5px; text-decoration: none;">United States</a>
+    <a href="https://www.amazon.com/gp/help/customer/display.html?nodeId=508510&ref_=nav_cs_help" class="button" style="background-color: #fff; color: #00000056; border:1.9px solid; border-color: #07070733; padding: 4.5px 20px; font-size: 9.7px; font-family: Roboto; font-weight: 700; border-radius: 3px; padding: 4px 24.5px 4.5px 24px; margin: 4px 0 -10px 0; border: none; font-size: 9px;margin-left: 10px; text-decoration: none;">Help</a>
+</div>
+<br>
+<div>
+    <div style="text-align: center; color: #00000062; margin-top: 12px; font-size: 9px;">
+        <span class="recwrapper-website-us display-inline" style="display: inline">
+            <a style="color: #00000062; text-decoration: none;" href="https://www.amazon.com/gp/help/customer/display.html?ie=UTF8&amp;nodeId=508088"
+                rel="nofollow">Conditions of Use&nbsp;&nbsp;&nbsp;</a>
+        </span>
+        
+        <a style="color: #00000062; text-decoration: none;" href="https://www.amazon.com/gp/help/customer/display.html?ie=UTF8&amp;nodeId=468496" rel="nofollow">Privacy
+            Notice&nbsp;&nbsp;&nbsp;</a>
+            <a style="color: #00000080; text-decoration: none;" href="https://www.amazon.com/gp/help/customer/display.html?ie=UTF8&amp;nodeId=468496" rel="nofollow">Your
+                Ads Privacy Choices <br>© 1996-{{order_date_year}}, Amazon.com, Inc. or its affiliates</a>
+    
+</div>
+    
+</body>
+
+</html>

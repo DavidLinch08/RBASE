@@ -1,0 +1,19 @@
+# render.yaml
+
+# Тип приложения
+type: python
+
+# Версия Python
+python: 3.9
+
+# Команда для запуска приложения
+entrypoint: streamlit run Rbase.py
+
+# Количество экземпляров для запуска
+scale:
+  instances: 1
+
+# Переменные окружения для приложения
+env:
+  - NAME: STREAMLIT_SERVER_PORT
+    VALUE: $PORT
